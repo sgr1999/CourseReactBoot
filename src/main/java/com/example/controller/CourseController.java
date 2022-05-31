@@ -39,6 +39,16 @@ public class CourseController {
 
         return save;
     }
+    
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/getCourse/{id}")
+    public Course getCourseById(@PathVariable("id") Long id) {
+
+       Course c= courseService.getCourseById(id);
+       System.out.println(c);
+       return c;
+
+    }
 
     @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/updateCourse/{id}")

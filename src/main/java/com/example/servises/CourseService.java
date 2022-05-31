@@ -26,6 +26,12 @@ public class CourseService {
         List<Course> save = courseRepository.findAll();
         return save;
      }
+    
+    public Course getCourseById(Long id){
+
+        Course save = courseRepository.getById(id);
+        return save;
+     }
 
     //Update
      public Course updateCourse(Course course,Long id){
